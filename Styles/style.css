@@ -1,0 +1,165 @@
+/*Importa los tipos de fuente utilizados en los textos*/
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*Define las variables a utilizar*/
+:root{
+    /*
+    --color-primario: #5F5D9C;
+    --color-secundario: #6196A6;
+    --color-terciario: #A4CE95;
+    --color-hover: #F4DECC;
+
+    --color-primario: #000000;
+    --color-secundario: #F6F6F6;
+    --color-terciario: #22D4FD;
+    --color-hover: #272727;
+    */
+    --color-primario:#FA7070;
+    --color-secundario: #FBF2CF;
+    --color-terciario: #C6EBC5;
+    --color-hover: #A1C298;
+
+    --fuente-montserrat: "Montserrat", serif;
+    --fuente-krona: "Krona One", serif;
+}
+
+/* El * significa que el cambio que se va a realizar es universal, es decir, aplica para todos los elementos*/
+/*En este caso se hace un reset del CSS, lo cual elimina el margen y y relleno que los navegadores agregan por defecto*/
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Cambia el color del body, es decir el fondo de la página */
+body {
+    background-color: var(--color-primario);    /* Define el color de fondo */
+    color: var(--color-secundario);       /* Define un color secundario, en este caso para mostrar los textos */
+    box-sizing: border-box;     /* Hace que los elementos no se salgan del espacio del body */
+}
+
+/*Indica las propiedades del header (Enlaces de encabezado)*/
+.header{
+    padding: 2% 0% 0% 7%;  /*Los valores ingresados van en el orden Arriba | Abajo | Derecha | Izquierda*/
+}
+.header_menu {
+    display: flex;
+    gap: 80px;  /*Agrega una separación de 80 pixeles entre los elementos de la clase header_menu*/
+}
+.header_menu_link {
+    font-family: var(--fuente-montserrat);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-terciario);
+    text-decoration: none;
+}
+
+/* Ubica los elementos de la clase presentacion en la pestaña */
+.presentacion{
+    display: flex;  /* Ubica por defecto todos los elementos en una sola fila */
+    align-items: center; /*Centra los elementos de este bloque*/
+    padding: 4% 7%; /*Agrega un margen al bloque de la clase presentacion en vertical y horizontal*/
+    justify-content: space-between; /*Crea una separación entre los elementos */
+    gap: 50px;
+}
+
+/*Define el tamaño del cuadro donde se muestra el contenido*/
+.presentacion_contenido{
+    width: 60%;
+    display: flex;  
+    flex-direction: column; /*Alinea todo dentro del contenedor flex de manera vertical, en una columna*/
+    gap: 40px;  /*Separa los elementos de la clase un espacio determinado*/
+}
+
+/*Define los parametros del título*/
+.presentacion_contenido_titulo{
+    font-family: var(--fuente-krona);
+    font-size: 2.25rem;
+}
+
+/* Establece el color para el elemento nombrado "resaltar_titulo"*/
+.resaltar_titulo{
+    color: var(--color-terciario);
+}
+
+/*Define los parametros de texto contenido*/
+.presentacion_contenido_texto{
+    font-family: var(--fuente-montserrat);
+    font-size: 1.4rem;
+}
+
+/*Define los parametros de los botones de enlace*/
+.presentacion_enlaces{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;    /*Centra los elementos*/
+    gap: 32px;
+}
+
+/*Define los parametros del subtitulo de los botones de enlace*/
+.presentacion_enlaces_subtitulo{
+    font-family: var(--fuente-krona);
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+/*Define los parametros para los botones*/
+.presentacion_enlaces_link{
+    width: 50%;
+    text-align: center;
+    padding: 21.5px 0px;    /*Se especifican dos valores, siendo el primero el margen vertical y el segundo el horizontal */
+    border-radius: 8px;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-decoration: none;  /*Quita la linea de subrayado que pone el navegador al detectar un enlace*/
+    color: var(--color-secundario);
+    border:2px solid var(--color-terciario);
+    display: flex;  /*Alinea los logos con el texto de enlace*/
+    justify-content: center;   /*Centra todo el contenido (logo y texto) dentreo del recuadro*/
+    gap: 10px; /*Separa los logos del texto por un espacio de 10px*/
+}
+
+/*Con el atributo Hover se hace que las propiedades de la clase presentacion_enlaces_link cambien al sobreponer el cursor*/
+.presentacion_enlaces_link:hover{
+    background-color: var(--color-hover);
+    cursor: pointer;    /*Cambia el estilo del cursor*/
+    padding: 3%;    /*Crea una pequeña animación a hacer más grande el botón*/
+}
+
+/*Define los parametros de la imagen mostrada*/
+.presentacion_imagen{
+    width: 40%;
+}
+
+/*Define lo sparametros del footer o pie de página*/
+.footer{
+    background-color: var(--color-terciario);
+    padding: 10px;
+    color: var(--color-primario);
+    text-align: center;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+/*Define un tamaño para cambiar la visualización del contenido, pensando en dispositivimos moviles*/
+@media (max-width: 800px){
+    .header{
+        padding: 10%;
+    }
+    .header_menu {
+        justify-content: center;
+    }
+    .presentacion{
+        flex-direction: column-reverse;
+        padding: 3%;
+    }
+    .presentacion_contenido{
+        width: auto;
+    }
+    .presentacion_imagen{
+        width: 55%;
+    }
+}
