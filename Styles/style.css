@@ -8,17 +8,17 @@
     --color-secundario: #6196A6;
     --color-terciario: #A4CE95;
     --color-hover: #F4DECC;
-
+    */
     --color-primario: #000000;
     --color-secundario: #F6F6F6;
     --color-terciario: #22D4FD;
     --color-hover: #272727;
-    */
+    /*
     --color-primario:#FA7070;
     --color-secundario: #FBF2CF;
     --color-terciario: #C6EBC5;
     --color-hover: #A1C298;
-
+    */
     --fuente-montserrat: "Montserrat", serif;
     --fuente-krona: "Krona One", serif;
 }
